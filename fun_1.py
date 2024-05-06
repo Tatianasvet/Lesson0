@@ -4,4 +4,4 @@ def print_params(name):
 
 print_params('arg')
 
-print_params('arg')
+print_params('num')
