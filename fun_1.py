@@ -1,4 +1,7 @@
-def test(a =2, b = True):
-    print(a, b)
+def print_params(name):
+    print("use", name)
+    print("not use", name)
 
-test(*[1,2])
+print_params('arg')
+
+print_params('arg')
