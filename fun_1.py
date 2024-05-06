@@ -1,6 +1,8 @@
-def say_hello(name):
-    print("Hello", name)
+import random
+def loterre():
+    tickets = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    win = random.choice(tickets)
+    return win
 
-say_hello('Denis')
-say_hello('Max')
-say_hello('Anton')
+win = loterre()
+print(win)
