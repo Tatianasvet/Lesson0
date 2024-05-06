@@ -1,8 +1,11 @@
 import random
-def loterre():
+def loterre(mon, thue):
     tickets = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    win = random.choice(tickets)
-    return win
+    win1 = random.choice(tickets)
+    tickets.remove(win1)
+    win2 = random.choice(tickets)
+    print(mon, thue)
+    return win1, win2
 
-win = loterre()
-print(win)
+win1, win2 = loterre('mon', 'thue')
+print(win1, win2)
