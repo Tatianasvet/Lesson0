@@ -1,6 +1,6 @@
-def say_hello():
-    print("Hello")
+def say_hello(name):
+    print("Hello", name)
 
-say_hello()
-say_hello()
-say_hello()
+say_hello('Denis')
+say_hello('Max')
+say_hello('Anton')
