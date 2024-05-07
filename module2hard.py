@@ -10,10 +10,15 @@ def number():
 case = int(number())
 print("Ваше число:", case)
 
-for i in range(1, (case//2 +1)):
+for i in range(1, case):
     j = i+1
-    for j in range(j, (case//2 +1)):
-        print(i, j)
+    for j in range(j, case):
+
+        if case % (i+j) == 0:
+            key = (i,j)
+            print(key)
+
+
 
 
 
