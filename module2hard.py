@@ -6,7 +6,7 @@ def number():
     case = random.choice(list_)
     return case
 
-
+key =[]
 case = int(number())
 print("Ваше число:", case)
 
@@ -15,8 +15,9 @@ for i in range(1, case):
     for j in range(j, case):
 
         if case % (i+j) == 0:
-            key = (i,j)
-            print(key)
+            k = i,j
+            key.append(k)
+print("Ваш код:", *key)
 
 
 
