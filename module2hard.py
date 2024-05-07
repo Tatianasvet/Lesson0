@@ -6,20 +6,19 @@ def number():
     case = random.choice(list_)
     return case
 
-key =[]
-case = int(number())
-print("Ваше число:", case)
+key = []
+run = int(number())
+print("your number:", run)
 
-for i in range(1, case):
+for i in range(1, run):
     j = i+1
-    for j in range(j, case):
 
-        if case % (i+j) == 0:
-            k = i,j
-            key.append(k)
-print("Ваш код:", *key)
+    for j in range(j, run):
 
+        if run % (i+j) == 0:
+            k_1 = i
+            key.append(k_1)
+            k_2 = j
+            key.append(k_2)
 
-
-
-
+print("your code:", *key)
