@@ -17,5 +17,11 @@ for turn in  range(1, 10):
         print(" Ходят крестики")
     row = int(input("Введите номер строки (1,2,3)")) - 1
     column = int(input("Введите номер строки (1,2,3)")) - 1
-    area[row][column] = turn_char
+    if area[row][column] == "*":
+        area[row][column] == turn_char
+    else:
+        print("Ячейка занята, вы пропускайте ход")
+        draw_area()
+        continue
+
     draw_area()
