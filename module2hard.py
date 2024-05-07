@@ -1,8 +1,11 @@
 import random
-def number():
-    tickets = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    win = random.choice(tickets)
-    return win
-win = int(number())
-print(win)
 
+
+def number():
+    list_ = list(range(3, 20))
+    case = random.choice(list_)
+    return case
+
+
+case = int(number())
+print("Ваше число:", case)
