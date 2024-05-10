@@ -8,7 +8,6 @@ def number():
 
 key = []
 run = int(number())
-print("your number:", run)
 
 for i in range(1, run):
     j = i+1
@@ -20,5 +19,5 @@ for i in range(1, run):
             key.append(k_1)
             k_2 = j
             key.append(k_2)
-
-print("your code:", *key)
+key_ = "".join(str(item) for item in key)
+print(run, "-", key_)
