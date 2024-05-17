@@ -7,6 +7,17 @@ def calculate_structure_sum(data_structure):
             total += component
         elif isinstance(component, str):
             total += len(component)
+        elif isinstance(component, dict):
+            for keys in component.keys():
+                if isinstance(keys, (int, float)):
+                    total += keys
+                elif isinstance(keys, str):
+                    total += len(keys)
+            for value in component.values():
+                if isinstance(value, (int, float)):
+                    total += value
+                elif isinstance(value, str):
+                    total += len(value)
 
 
 
