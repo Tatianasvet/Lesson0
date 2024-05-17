@@ -5,6 +5,8 @@ def calculate_structure_sum(data_structure):
     for component in  data_structure:
         if isinstance(component, (int, float)):
             total += component
+        elif isinstance(component, str):
+            total += len(component)
 
 
 
