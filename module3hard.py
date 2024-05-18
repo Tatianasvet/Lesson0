@@ -1,8 +1,8 @@
 
-def calculate_structure_sum(data_structure):
+def calculate_structure_sum(*args):
     total = 0
 
-    for component in  data_structure:
+    for component in  args:
         if isinstance(component, (int, float)):
             total += component
         elif isinstance(component, str):
@@ -31,6 +31,6 @@ data_structure = [
     ((), [{(2, 'Urban', ('Urban2', 35))}])
 ]
 
-result = calculate_structure_sum(data_structure)
+result = calculate_structure_sum(*data_structure)
 print(result)
 
