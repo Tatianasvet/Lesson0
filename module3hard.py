@@ -1,11 +1,11 @@
 
-def sum_data(data):
-    total = 0
-    if isinstance(data, (int, float)):
-        total += data
-    elif isinstance(data, str):
-        total += len(data)
-        return total
+def sum_(component):
+    i = 0
+    if isinstance(component, (int, float)):
+        i += component
+    elif isinstance(component, str):
+        i += len(component)
+        return i
 pass
 
 def calculate_structure_sum(*args):
@@ -27,7 +27,7 @@ def calculate_structure_sum(*args):
                     total += value
                 elif isinstance(value, str):
                     total += len(value)
-        elif isinstance(component, list,) or isinstance(component, tuple):
+        elif isinstance(component, list) or isinstance(component, tuple):
             for item in component:
                 if isinstance(item, (int, float)):
                     total += item
@@ -44,6 +44,9 @@ def calculate_structure_sum(*args):
                             total += value
                         elif isinstance(value, str):
                             total += len(value)
+                elif isinstance(item, list):
+
+                    pass
 
 
 
