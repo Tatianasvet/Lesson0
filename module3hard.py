@@ -55,9 +55,6 @@ def calculate_structure_sum(*args):
         elif isinstance(component,set):
             return calculate_structure_sum(*component)
 
-
-
-
     return total
 
 data_structure = [
