@@ -6,18 +6,17 @@ data_structure = [
     ((), [{(2, 'Urban', ('Urban2', 35))}])
 ]
 
+
 def calculate_structure_sum(*args):
 
     total = 0
 
     for data in args:
-        if isinstance(data,list) or isinstance(data, set) or isinstance(data, tuple):
-            #return [calculate_structure_sum(item) for item in data]
+        if isinstance(data, list) or isinstance(data, set) or isinstance(data, tuple):
             for item in data:
                 total += calculate_structure_sum(item)
 
-
-        else :
+        else:
             if isinstance(data, (int, float)):
                 total += data
             elif isinstance(data, str):
@@ -34,7 +33,6 @@ def calculate_structure_sum(*args):
                     elif isinstance(value, str):
                         total += len(value)
     return total
-
 
 
 result = calculate_structure_sum(data_structure)
