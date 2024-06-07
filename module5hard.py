@@ -16,4 +16,10 @@ class UrTube:
         self.videos =[]
         self.current_user = None
 
-    def log_in(self,):
+    def log_in(self, login, password):
+        for member in self.users:
+            if member.nickname == login:
+                if member.password == hash(password):
+                    self.current_user = member
+
+    def register
