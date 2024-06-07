@@ -38,3 +38,6 @@ class UrTube:
                 return user
         return None
 
+    def log_out(self):
+        self.current_user = None
+
