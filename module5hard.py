@@ -22,4 +22,19 @@ class UrTube:
                 if member.password == hash(password):
                     self.current_user = member
 
-    def register
+    def register(self, nickname, password, age):
+        new_user = self.find_user(nickname)
+        if new_user is not None:
+            print(f'Пользователь {new_user} уже существует')
+            self.current_user = new_user
+        else:
+            new_user = User(nickname, password, age)
+            self.users.append(new_user)
+            self.current_user = new_user
+
+    def find_user(self, nickname):
+        for user in self.users:
+            if user.nickname == nickname:
+                return user
+        return None
+
