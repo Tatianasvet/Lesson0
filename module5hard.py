@@ -41,3 +41,7 @@ class UrTube:
     def log_out(self):
         self.current_user = None
 
+    def add(self, videos):
+        for video in videos:
+            if type(video) is Video:
+                self.videos.append(video)
