@@ -45,3 +45,16 @@ class UrTube:
         for video in videos:
             if type(video) is Video:
                 self.videos.append(video)
+
+    def get_videos(self, search):
+        find_videos = []
+        for video in self.videos:
+            if search.lower() in video.title.lower():
+                find_videos.append(video.title)
+        return find_videos
+
+    def find_video(self, title):
+        for video in self.videos:
+            if video.title == title:
+                return video
+        return None
