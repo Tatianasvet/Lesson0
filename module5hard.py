@@ -7,6 +7,9 @@ class User:
         self.password = hash(password)
         self.age = age
 
+    def __str__(self):
+        return self.nickname
+
 
 class Video:
     def __init__(self, title, duration, time_now=0, adult_mode=False):
@@ -32,7 +35,7 @@ class UrTube:
         new_user = self.find_user(nickname)
         if new_user is not None:
             print(f'Пользователь {new_user.nickname} уже существует')
-            self.current_user = new_user
+            self.log_in(nickname, password)
         else:
             new_user = User(nickname, password, age)
             self.users.append(new_user)
