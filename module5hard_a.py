@@ -38,7 +38,7 @@ class UrTube:
         new_user = self.find_user(nickname)
         if new_user is not None:
             print(f'Пользователь {new_user} уже существует')
-            self.current_user = new_user
+            self.log_in(nickname, password)
         else:
             new_user = User(nickname, password, age)
             self.users.append(new_user)
