@@ -1,4 +1,4 @@
-from math import pi
+from math import pi, sqrt
 class Figure:
     sides_count = 0
 
@@ -72,18 +72,37 @@ class Circle(Figure):
         return pi * self.__radius**2
 
 class Triangle(Figure):
-    pass
+    sides_count = 3
+
+    def __init__(self, color, *sides):
+        super().__init__(color, *sides)
+        self.__height = self.get_height()
+
+    def set_sides(self, *sides):
+        super().set_sides(*sides)
+        if (self.get_sides()[0] + self.get_sides()[1] > self.get_sides()[2] and
+                self.get_sides()[1] + self.get_sides()[2] > self.get_sides()[0] and
+                self.get_sides()[2] + self.get_sides()[0] > self.get_sides()[1]):
+            self.__height = self.get_height()
+        else:
+            self.set_sides(1, 1, 1)
+
+    def get_height(self):
+        p = self.__len__()/2
+        return (2 * sqrt(p * (p - self.get_sides()[0]) *
+                         (p - self.get_sides()[1]) *
+                         (p - self.get_sides()[2]))) / self.get_sides()[0]
+
+    def get_square(self):
+        return (self.get_sides()[0] * self.get_height()) / 2
 
 
 class Cube(Figure):
     pass
 
 
-circle1 = Circle((200, 200, 100), 31415926536)  # (Цвет, стороны)
-print(circle1.get_color())
-print(circle1.get_sides())
-print(len(circle1))
-print(circle1.get_radius())
-circle1.set_sides(10)  # Изменится
-print(len(circle1))
-print(circle1.get_square())
+t1 = Triangle((23,12,34), 5, 5, 400)
+print(t1.get_sides())
+print(t1.get_height(), t1.get_square())
+t1.set_sides(5,6,6)
+print(t1.get_height(), t1.get_square())
