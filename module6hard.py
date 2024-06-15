@@ -1,5 +1,5 @@
 class Figure:
-    sides_count = 3
+    sides_count = 0
 
     def __init__(self,  color, *sides):
         self.__sides = []
@@ -48,8 +48,8 @@ class Figure:
         else:
             return False
 
-
-
+    def __len__(self):
+        return sum(self.__sides)
 
 
 class Circle(Figure):
@@ -68,3 +68,4 @@ f = Figure('разные', 'красивый')
 f1 = Figure((25,25,25), 3,4,5)
 print(f.filled, f.get_color(), f.get_sides())
 print(f1.filled, f1.get_color(), f1.get_sides())
+print(len(f))
