@@ -1,3 +1,4 @@
+from math import pi
 class Figure:
     sides_count = 0
 
@@ -31,6 +32,7 @@ class Figure:
 
     def set_sides(self, *sides):
         if self.__is_valid_sides(*sides):
+            self.__sides.clear()
             for j in sides:
                 self.__sides.append(j)
         else:
@@ -53,8 +55,18 @@ class Figure:
 
 
 class Circle(Figure):
-    pass
+    sides_count = 1
 
+    def __init__(self, color, *sides):
+        super().__init__(color, *sides)
+        self.__radius = self.get_sides()[0]/(2*pi)
+
+    def set_sides(self, *sides):
+        super().set_sides(*sides)
+        self.__radius = self.get_sides()[0] / (2 * pi)
+
+    def get_square(self):
+        return pi * self.__radius**2
 
 class Triangle(Figure):
     pass
@@ -64,8 +76,9 @@ class Cube(Figure):
     pass
 
 
-f = Figure('разные', 'красивый')
-f1 = Figure((25,25,25), 3,4,5)
-print(f.filled, f.get_color(), f.get_sides())
-print(f1.filled, f1.get_color(), f1.get_sides())
-print(len(f))
+circle1 = Circle((200, 200, 100), 10) # (Цвет, стороны)
+print(circle1.get_color())
+circle1.set_sides(2) # Изменится
+print(circle1.get_sides())
+print(len(circle1))
+print(circle1.get_square())
