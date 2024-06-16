@@ -1,4 +1,6 @@
 from math import pi, sqrt
+
+
 class Figure:
     sides_count = 0
 
@@ -71,6 +73,7 @@ class Circle(Figure):
     def get_square(self):
         return pi * self.__radius**2
 
+
 class Triangle(Figure):
     sides_count = 3
 
@@ -98,11 +101,15 @@ class Triangle(Figure):
 
 
 class Cube(Figure):
-    pass
+    sides_count = 12
 
+    def __init__(self, color, *sides):
+        side_12 = sides * 12
+        super().__init__(color, *side_12)
 
-t1 = Triangle((23,12,34), 5, 5, 400)
-print(t1.get_sides())
-print(t1.get_height(), t1.get_square())
-t1.set_sides(5,6,6)
-print(t1.get_height(), t1.get_square())
+    def get_volume(self):
+        return self.get_sides()[0] ** 3
+
+c_1 = Cube((12,12,12), 100)
+print(c_1.get_sides())
+print(c_1.get_volume())
