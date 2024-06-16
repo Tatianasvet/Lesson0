@@ -29,16 +29,12 @@ class Figure:
         if self.__is_valid_color(r, g, b):
             self.__color = [r, g, b]
             self.filled = True
-        else:
-            print("неверный цвет")
 
     def set_sides(self, *sides):
         if self.__is_valid_sides(*sides):
             self.__sides.clear()
             for j in sides:
                 self.__sides.append(j)
-        else:
-            print("invalid sides")
 
     def get_sides(self):
         return self.__sides
@@ -110,6 +106,23 @@ class Cube(Figure):
     def get_volume(self):
         return self.get_sides()[0] ** 3
 
-c_1 = Cube((12,12,12), 100)
-print(c_1.get_sides())
-print(c_1.get_volume())
+circle1 = Circle((200, 200, 100), 10)  # (Цвет, стороны)
+cube1 = Cube((222, 35, 130), 6)
+
+# Проверка на изменение цветов:
+circle1.set_color(55, 66, 77)  # Изменится
+cube1.set_color(300, 70, 15)  # Не изменится
+print(circle1.get_color())
+print(cube1.get_color())
+
+# Проверка на изменение сторон:
+cube1.set_sides(5, 3, 12, 4, 5)  # Не изменится
+circle1.set_sides(15)  # Изменится
+print(cube1.get_sides())
+print(circle1.get_sides())
+
+# Проверка периметра (круга), это и есть длина:
+print(len(circle1))
+
+# Проверка объёма (куба):
+print(cube1.get_volume())
