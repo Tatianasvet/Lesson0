@@ -20,14 +20,13 @@ time_avg = (team1_time + team2_time)/2
 
 print("В команде Мастера кода участников: %d !" % (team1_num))
 print("В команде Волшебники данных: %d !" % (team2_num))
-print('Итого сегодня в командах участников: %d и %d !' % (team1_num, team2_num))
-
+print('Итого сегодня в командах участников: %d и %d !\n' % (team1_num, team2_num))
 
 print('Команда Мастера кода решила задач: {0} !'.format(score1))
-print('Команда Волшебники данных решила задач: {0} !'.format(score2))
+print('Команда Волшебники данных решила задач: {0} !\n'.format(score2))
 print('Мастера кода решили задачи за {0:4.1f} с !'.format(team1_time))
 print('Волшебники данных решили задачи за {0:4.1f} с !'.format(team2_time))
 
-print(f'Команды решили {score1} и {score2} задач.')
-print(f'Результат битвы: {challenge_result()}')
+print(f'Команды решили {score1} и {score2} задач.\n')
+print(f'Результат битвы:\n{challenge_result()}\n')
 print(f'Сегодня было решено {tasks_total} задач, в среднем по {time_avg:4.1f} секунды на задачу!.')
