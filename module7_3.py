@@ -9,11 +9,11 @@ team2_time = 2153.31451
 
 def challenge_result():
     if score1 > score2 or score1 == score2 and team1_time > team2_time:
-        return('Победа команды Мастера кода!')
+        return 'Победа команды Мастера кода!'
     elif score1 < score2 or score1 == score2 and team1_time < team2_time:
-        return('Победа команды Волшебники Данных!')
+        return 'Победа команды Волшебники Данных!'
     else:
-        return('Ничья!')
+        return 'Ничья!'
 
 tasks_total = score1 + score2
 time_avg = (team1_time + team2_time)/2
@@ -28,5 +28,5 @@ print('Мастера кода решили задачи за {0:4.1f} с !'.for
 print('Волшебники данных решили задачи за {0:4.1f} с !'.format(team2_time))
 
 print(f'Команды решили {score1} и {score2} задач.\n')
-print(f'Результат битвы:\n{challenge_result()}\n')
+print(f'\\/{' Результат битвы: ':~^40}\\/\n |{challenge_result():^40}|\n/\\{'':~^40}/\\')
 print(f'Сегодня было решено {tasks_total} задач, в среднем по {time_avg:4.1f} секунды на задачу!.')
